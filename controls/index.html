@@ -1,0 +1,509 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control Box</title>
+
+	  <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<style>
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+table {
+  width:100vw;
+  height:90vh;
+}
+table, th, td {
+  border: 4px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+table#t01{
+  background-color: #eee;
+}
+table#t01 th {
+  background-color: red;
+  color: white;
+  font-size:50px;
+}
+
+
+.tdc
+{
+	background-color: black;
+}
+
+
+.blade_container{
+   width:180px;
+   height:180px;
+   margin:auto;
+   margin-top:50px;
+   animation: blade 0.3s linear infinite;
+
+}
+@keyframes blade{
+   0%{transform:rotate(360deg);} 
+}
+
+  .rode{
+     width:15px; 
+     height:150px;
+     background-color:black;
+     margin:auto;
+     margin-top:0px;
+  }
+  .stand{
+     width:100px;
+     height:15px;
+     background-color:black;
+     margin:auto;
+  }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ceiling-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  animation: spin 5ms linear infinite;
+}
+.ceiling-container:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  margin-top: -35px;
+  background: #444;
+  box-shadow: inset 0 0px 0px 8px #444444, inset 0 1px 5px 22px #383838;
+}
+
+.ceiling-fan {
+  display: block;
+  background: black;
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: inset 1px 1px 40px #555;
+}
+.ceiling-fan:after {
+  content: "";
+  position: absolute;
+  background: #666;
+  display: block;
+}
+.ceiling-fan.horizontal {
+  width: auto;
+  height: 50px;
+  top: 50%;
+  margin-top: -25px;
+  transform: skewX(20deg);
+}
+.ceiling-fan.horizontal:after {
+  top: 25%;
+  width: 15px;
+  height: 50%;
+}
+.ceiling-fan.vertical {
+  width: 50px;
+  height: auto;
+  left: 50%;
+  margin-left: -25px;
+  transform: skewY(20deg);
+}
+.ceiling-fan.vertical:after {
+  height: 15px;
+  width: 50%;
+  margin-left: 25%;
+}
+.ceiling-fan.left {
+  left: 0;
+  right: 50%;
+  margin-right: 45px;
+  border-radius: 50% 15px 15px 50%;
+}
+.ceiling-fan.left:after {
+  left: 100%;
+}
+.ceiling-fan.right {
+  right: 0;
+  left: 50%;
+  margin-left: 45px;
+  border-radius: 15px 50% 50% 15px;
+}
+.ceiling-fan.right:after {
+  right: 100%;
+}
+.ceiling-fan.top {
+  top: 0;
+  bottom: 50%;
+  margin-bottom: 45px;
+  border-radius: 50% 50% 15px 15px;
+}
+.ceiling-fan.top:after {
+  top: 100%;
+}
+.ceiling-fan.bottom {
+  top: 50%;
+  bottom: 0;
+  margin-top: 45px;
+  border-radius: 15px 15px 50% 50%;
+}
+.ceiling-fan.bottom:after {
+  bottom: 100%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ceiling-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  animation: spin 0ms linear infinite;
+}
+.ceiling-container:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  margin-top: -35px;
+  background: #444;
+  box-shadow: inset 0 0px 0px 8px #444444, inset 0 1px 5px 22px #383838;
+}
+
+.ceiling-fan {
+  display: block;
+  background: black;
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: inset 1px 1px 40px #555;
+}
+.ceiling-fan:after {
+  content: "";
+  position: absolute;
+  background: #666;
+  display: block;
+}
+.ceiling-fan.horizontal {
+  width: auto;
+  height: 50px;
+  top: 50%;
+  margin-top: -25px;
+  transform: skewX(20deg);
+}
+.ceiling-fan.horizontal:after {
+  top: 25%;
+  width: 15px;
+  height: 50%;
+}
+.ceiling-fan.vertical {
+  width: 50px;
+  height: auto;
+  left: 50%;
+  margin-left: -25px;
+  transform: skewY(20deg);
+}
+.ceiling-fan.vertical:after {
+  height: 15px;
+  width: 50%;
+  margin-left: 25%;
+}
+.ceiling-fan.left {
+  left: 0;
+  right: 50%;
+  margin-right: 45px;
+  border-radius: 50% 15px 15px 50%;
+}
+.ceiling-fan.left:after {
+  left: 100%;
+}
+.ceiling-fan.right {
+  right: 0;
+  left: 50%;
+  margin-left: 45px;
+  border-radius: 15px 50% 50% 15px;
+}
+.ceiling-fan.right:after {
+  right: 100%;
+}
+.ceiling-fan.top {
+  top: 0;
+  bottom: 50%;
+  margin-bottom: 45px;
+  border-radius: 50% 50% 15px 15px;
+}
+.ceiling-fan.top:after {
+  top: 100%;
+}
+.ceiling-fan.bottom {
+  top: 50%;
+  bottom: 0;
+  margin-top: 45px;
+  border-radius: 15px 15px 50% 50%;
+}
+.ceiling-fan.bottom:after {
+  bottom: 100%;
+}
+
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<ul>
+  <li><a class="active" href="../#home"><i class="fa fa-home"></i>&nbsp Home</a></li>
+  <li><a href="../#contact"><i class="fa fa-sign-in"></i>&nbsp Login</a></li>
+  <li><a href="../#about"><i class="fa fa-info"></i>&nbsp About</a></li>
+  <li style="float:right"><a href="#" onclick="firebase.auth().signOut();"><i class="fa fa-power-off"></i>&nbsp Logout</a></li>
+  <li style="float:right"><a id="user" href="../#contact"><i class="fa fa-user"></i>&nbsp User</a></li>
+</ul>
+
+
+<center>
+<table id="t01">
+  <tr>
+    <th>Bulbs</th>
+    <th>State Switch</th>
+	<th>Fan</th>
+    <th>Speed Level</th>
+  </tr>
+  <tr>
+    <td>
+    	<img src="bulboff.png" id="b1" height="200"></img>
+    </td>
+    
+    <td class="tdc">
+    	<button type="button" class="btn btn-success btn-circle btn-xl"><i class="fa fa-lightbulb-o" style="color:yellow;" onclick="b1s(0);"></i></button>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<button type="button" class="btn btn-danger btn-circle btn-xl" onclick="b1s(1);"><i class="fa fa-lightbulb-o"></i></button>
+    </td>
+	
+	<td>
+		<div class="ceiling-container" id="myDIV">
+		<div class="ceiling-fan horizontal left"></div>
+		<div class="ceiling-fan horizontal right"></div>  
+		<div class="ceiling-fan vertical rotated top"></div>
+		<div class="ceiling-fan vertical rotated bottom"></div>
+		</div>
+    </td>
+    
+    <td class="tdc">
+    	<button type="button" class="btn btn-primary btn-circle btn-xl" onclick="fs(0);">0</button>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<button type="button" class="btn btn-primary btn-circle btn-xl" onclick="fs(1);">1</button>
+		<br><br><br><br>
+		<button type="button" class="btn btn-primary btn-circle btn-xl" onclick="fs(2);">2</button>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<button type="button" class="btn btn-primary btn-circle btn-xl" onclick="fs(3);">3</button>
+    </td>
+	
+  </tr>
+  
+  
+  <tr>
+    <td>
+    	<img src="bulboff.png" id="b2" height="200"></img>
+    </td>
+    
+    <td class="tdc">
+    	<button type="button" class="btn btn-success btn-circle btn-xl"><i class="fa fa-lightbulb-o" style="color:yellow;" onclick="b2s(0);"></i></button>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<button type="button" class="btn btn-danger btn-circle btn-xl" onclick="b2s(1);"><i class="fa fa-lightbulb-o"></i></button>
+    </td>
+  </tr>
+</table>
+</center>
+
+
+
+<script>
+
+function bulb1(s){
+	if(s==1)
+	{
+		document.getElementById("b1").src="bulboff.png";
+	}
+	else
+	{
+		document.getElementById("b1").src="bulbonn.png";
+	}
+}
+
+function bulb2(s){
+	if(s==1)
+	{
+		document.getElementById("b2").src="bulboff.png";
+	}
+	else
+	{
+		document.getElementById("b2").src="bulbonn.png";
+	}
+}
+
+function myFunction(s) {
+	if(s==0)
+	{
+		document.getElementById("myDIV").style.WebkitAnimationDuration="0s";  // Code for Chrome, Safari, and Opera
+		document.getElementById("myDIV").style.animationDuration="0s";
+	}
+	else{
+		document.getElementById("myDIV").style.WebkitAnimationDuration=(1/s).toString()+"s";  // Code for Chrome, Safari, and Opera
+		document.getElementById("myDIV").style.animationDuration=(1/s).toString()+"s";
+	}
+}
+
+</script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBcXcAtVqPT87iAxDgi9ilV5XhIkMIcdv0",
+    authDomain: "smart-home-1343e.firebaseapp.com",
+    databaseURL: "https://smart-home-1343e.firebaseio.com",
+    projectId: "smart-home-1343e",
+    storageBucket: "smart-home-1343e.appspot.com",
+    messagingSenderId: "228104491397",
+    appId: "1:228104491397:web:51d6ad15ded670aaf7b4ec",
+    measurementId: "G-XVRFB29T17"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var email = user.email;
+	document.getElementById("user").innerHTML='<i class="fa fa-user"></i>&nbsp '+email;
+    // ...
+  } else {
+    // User is signed out.
+	window.location.href="../#contact";
+    // ...
+  }
+	});
+  
+  var fref=firebase.database().ref();
+  
+  var s1=fref.child("smarthome/s1");
+  s1.on('value',function(ds){
+	bulb1(ds.val());
+  });
+  
+  var s2=fref.child("smarthome/s2");
+  s2.on('value',function(ds){
+	bulb2(ds.val());
+  });
+  
+  var s3=fref.child("smarthome/s3");
+  s3.on('value',function(ds){
+	myFunction(ds.val());
+  });
+  
+  function b1s(x)
+  {
+	fref.child("smarthome/s1").set(x);
+  }
+  function b2s(x)
+  {
+	fref.child("smarthome/s2").set(x);
+  }
+  function fs(x)
+  {
+	fref.child("smarthome/s3").set(x);
+  }
+</script>
+
+</body>
+
+</html>
